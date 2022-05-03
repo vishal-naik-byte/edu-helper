@@ -3,7 +3,6 @@
 
 
 
-
 from logging import WARNING, FileHandler,WARNING
 from urllib import response
 from flask import Flask, render_template, request
