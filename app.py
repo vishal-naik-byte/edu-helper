@@ -5,6 +5,7 @@
 
 
 from logging import WARNING, FileHandler,WARNING
+from urllib import response
 from flask import Flask, render_template, request
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
@@ -12,7 +13,8 @@ from chatterbot.trainers import ListTrainer
 from train import *
 from train1 import *
 #from d.filterquestions import *
-#from imp.getData import *
+from getData import *
+
 
 
 app = Flask(__name__)
@@ -35,6 +37,7 @@ trainer1.train(data1)
 trainer1.train(attendenceConvo)
 trainer1.train(unrelateddata)
 
+log_of_chat=['this','is','logs']
 #define app routes
 @app.route("/")
 def index():
@@ -44,16 +47,21 @@ def index():
 #function for the bot response
 def get_bot_response():
     userText = request.args.get('msg')
+    log_of_chat.append(userText)
+    print(str(log_of_chat))
 
-    if userText[:8] == "rollno::":
+    if userText[:8] == "rollno::" and log_of_chat[-2] == 'ok what is your Roll No:? Format:rollno::xxxx' or log_of_chat[-2] == 'ok what is your Roll No:?Format:rollno::xxxx':
         RollNo=userText[8:]
-        print(RollNo)
-        #attendence=get_Attendence(RollNo)
+        attendence=get_Attendence(RollNo)
         return str(attendence)
+    elif userText[:8] == "rollno::" and (log_of_chat[-2] != 'ok what is your Roll No: ? Format:rollno::xxxx' or log_of_chat[-2] != 'ok what is your Roll No:? Format:rollno::xxxx'):
+        return str("Please first ask me to show your attendence")
+
 #    elif userText not in filter:
 #        return str("Sorry not in database!")
 
     bot_response=chatbot.get_response(userText)
+    log_of_chat.append(str(bot_response))
     return str(bot_response)
 
 if __name__ == "__main__":
