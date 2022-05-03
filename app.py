@@ -12,7 +12,7 @@ from chatterbot.trainers import ListTrainer
 from train import *
 from train1 import *
 #from d.filterquestions import *
-from getData import *
+#from imp.getData import *
 
 
 app = Flask(__name__)
@@ -48,7 +48,7 @@ def get_bot_response():
     if userText[:8] == "rollno::":
         RollNo=userText[8:]
         print(RollNo)
-        attendence=get_Attendence(RollNo)
+        #attendence=get_Attendence(RollNo)
         return str(attendence)
 #    elif userText not in filter:
 #        return str("Sorry not in database!")
