@@ -21,9 +21,9 @@ app = Flask(__name__)
 File_Handler=FileHandler('errorlog.txt')
 File_Handler.setLevel(WARNING)
 #create chatbot
-print("Started...")
+print("chatbot Starting...")
 #read_only=True is a chatbot parameter for only read i removed that this is my note
-chatbot = ChatBot("Sisly Chatbot", storage_adapter="chatterbot.storage.SQLStorageAdapter",logic_adapter=["chatterbot.logic.BestMatch",'chatterbot.logic.MathematicalEvaluation','chatterbot.logic.TimeLogicAdapter',{
+chatbot = ChatBot("Edu-helper Chatbot", storage_adapter="chatterbot.storage.SQLStorageAdapter",logic_adapter=["chatterbot.logic.BestMatch",'chatterbot.logic.MathematicalEvaluation','chatterbot.logic.TimeLogicAdapter',{
             'import_path': 'chatterbot.logic.SpecificResponseAdapter',
             'input_text': 'Help me!',
             'output_text': 'Ok, here is a link: http://chatterbot.rtfd.org'
@@ -49,7 +49,10 @@ def get_bot_response():
     log_of_chat.append(userText)
     print(str(log_of_chat))
 
-    if userText[:8] == "rollno::" and log_of_chat[-2] == 'ok what is your Roll No:? Format:rollno::xxxx' or log_of_chat[-2] == 'ok what is your Roll No:?Format:rollno::xxxx':
+    if userText == " ":
+        return str("Please dont send blank messages")
+
+    if userText[:8] == "rollno::" and (log_of_chat[-2] == 'ok what is your Roll No:? Format:rollno::xxxx' or log_of_chat[-2] == 'ok what is your Roll No:?Format:rollno::xxxx'):
         RollNo=userText[8:]
         attendence=get_Attendence(RollNo)
         return str(attendence)

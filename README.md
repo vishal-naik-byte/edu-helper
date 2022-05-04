@@ -1,2 +1,2 @@
-# Sisly_Chatbot
-Sisly The Educational Chatbot.
+# Edu-helper_Chatbot
+Edu-helper The Educational Chatbot.
