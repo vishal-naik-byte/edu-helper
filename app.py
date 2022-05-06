@@ -40,6 +40,10 @@ log_of_chat=['this','is','logs']
 #define app routes
 @app.route("/")
 def index1():
+    return render_template("index.html")
+
+@app.route("/bot")
+def bot():
     return render_template("index1.html")
 
 @app.route("/index")
