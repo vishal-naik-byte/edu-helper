@@ -4,7 +4,9 @@ data1=[
     "hey",
     "hi",
     "How are you?",
+    "how are you",
     "I am good what about you?",
+    "good",
     "That is good to hear.",
     "ok",
     "ok",
@@ -18,6 +20,18 @@ data1=[
 
 attendenceConvo=[
     "Show my attendence",
-    "ok what is your Roll No:?Format:rollno::xxxx",
-    
+    "ok what is your Roll No:?Format:rollno::xxxx"
+]
+
+not_to_reply=[
+    "what is computer",
+    "what is your name",
+    "Help me!",
+    "Show my attendence",
+    "what is your name ?"
+]
+
+acceptable_inputs=[
+    "good",
+    "who made u"
 ]

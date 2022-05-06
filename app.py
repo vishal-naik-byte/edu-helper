@@ -36,11 +36,48 @@ trainer1.train(data1)
 trainer1.train(attendenceConvo)
 trainer1.train(unrelateddata)
 
+combined_data=data+data1+attendenceConvo+unrelateddata
 log_of_chat=['this','is','logs']
 #define app routes
 @app.route("/")
-def index():
+def index1():
     return render_template("index1.html")
+
+@app.route("/index")
+def index():
+    return render_template("index.html")
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+@app.route("/register")
+def register():
+    return render_template("register.html")
+
+@app.route("/forgot")
+def forgot():
+    return render_template("forgot.html")
+
+@app.route("/reset")
+def reset():
+    return render_template("reset.html")
+
+@app.route("/about_us")
+def about_us():
+    return render_template("about_us.html")
+
+@app.route("/cources")
+def cources():
+    return render_template("cources.html")
+
+@app.route("/blog")
+def blog():
+    return render_template("blog.html")
+
+@app.route("/contact_us")
+def contact_us():
+    return render_template("contact_us.html")
 
 @app.route("/get")
 #function for the bot response
@@ -48,7 +85,6 @@ def get_bot_response():
     userText = request.args.get('msg')
     log_of_chat.append(userText)
     print(str(log_of_chat))
-
     if userText == " ":
         return str("Please dont send blank messages")
 
@@ -59,10 +95,17 @@ def get_bot_response():
     elif userText[:8] == "rollno::" and (log_of_chat[-2] != 'ok what is your Roll No: ? Format:rollno::xxxx' or log_of_chat[-2] != 'ok what is your Roll No:? Format:rollno::xxxx'):
         return str("Please first ask me to show your attendence")
 
+    if userText not in combined_data:
+        if userText.capitalize() not in combined_data:
+        #return str("If you giving new input than its good but first get the permission to add your new input")
+            return str("srry i din't understand")
+
+
 #    elif userText not in filter:
 #        return str("Sorry not in database!")
-
     bot_response=chatbot.get_response(userText)
+    if bot_response in not_to_reply:
+        return str("If this input is correct than Sorry i am still learning")
     log_of_chat.append(str(bot_response))
     return str(bot_response)
 

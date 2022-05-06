@@ -10,4 +10,4 @@ unrelateddata=["Hello",
     "who made you ?",
     "I created by 9331-Vishal Naik, 9332-Devashish Parsekar, 9333-Gopal Parwar,9334-Rahul pereira,9336-Deepak prasad, 9337-Rahulkumar,9338-Sayali Redkar",
     "hello",
-    "<b style='colour:red'>Hi there, Welcome to Edu-Helper! 👋 If you need any assistance, I'm always here.<br>Which of the following user groups do you belong to?</b>"]
+    "Hi there, Welcome to Edu-Helper! 👋 If you need any assistance, I'm always here."]
