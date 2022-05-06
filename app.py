@@ -82,6 +82,13 @@ def blog():
 def contact_us():
     return render_template("contact_us.html")
 
+@app.route("/register")
+def get_data():
+    data=request.data
+    print(data)
+    data=request.form['name']
+    print(data)
+
 @app.route("/get")
 #function for the bot response
 def get_bot_response():

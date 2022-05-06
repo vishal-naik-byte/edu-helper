@@ -19,7 +19,7 @@
 					<div class="card fat">
 						<div class="card-body">
 							<h4 class="card-title">Register</h4>
-							<form method="POST" class="my-login-validation" novalidate="">
+							<form method="POST" class="my-login-validation" novalidate="" action="{{ url_for('register') }}">
 								<div class="form-group">
 									<label for="name">Name</label>
 									<input id="name" type="text" class="form-control" name="name" required autofocus>
@@ -55,7 +55,7 @@
 								</div>
 
 								<div class="form-group m-0">
-									<button type="submit" class="btn btn-primary btn-block">
+									<button id="register" type="submit" class="btn btn-primary btn-block">
 										Register
 									</button>
 								</div>
@@ -72,9 +72,27 @@
 			</div>
 		</div>
 	</section>
-
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<script src="{{ url_for('static', filename='js/my-login.js') }}"></script>
+	<script>
+		function getResponse() {
+			let userText = $("#name").val();
+			let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
+			$("#name").val("");
+			$.get("/register_data", { msg: name}).done(function(data) {
+			var data = data;
+	});
+	}
+		$("#register").keypress(function(e) {
+		//if enter key is pressed
+			if(e.which == 13) {
+				getResponse();
+			}
+		});
+		$("#register").click(function() {
+			getResponse();
+		});
+		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
