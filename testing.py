@@ -1,6 +1,4 @@
-a="""
-
-hi, how are you doing?	i'm fine. how about yourself?
+a='''hi, how are you doing?	i'm fine. how about yourself?
 i'm fine. how about yourself?	i'm pretty good. thanks for asking.
 i'm pretty good. thanks for asking.	no problem. so how have you been?
 no problem. so how have you been?	i've been great. what about you?
@@ -857,8 +855,8 @@ but i love pizza.	everybody loves pizza.
 everybody loves pizza.	so why can't i have pizza for dinner?
 so why can't i have pizza for dinner?	because you need variety.
 because you need variety.	what's "variety?
-what's "variety?	different thingsnot the same thing all the time.
-different thingsnot the same thing all the time.	you mean, like a pepperoni pizza instead of a cheese pizza?
+what's "variety?	different thingsÂ—not the same thing all the time.
+different thingsÂ—not the same thing all the time.	you mean, like a pepperoni pizza instead of a cheese pizza?
 you mean, like a pepperoni pizza instead of a cheese pizza?	no, i mean a salad instead of a pizza.
 we need to save money.	why do we need to save money?
 why do we need to save money?	because we need to buy a house.
@@ -1522,8 +1520,8 @@ did you wipe your feet? 	yes, of course i wiped my feet.
 yes, of course i wiped my feet.	then why is there mud on the carpet?
 then why is there mud on the carpet?	i don't know. it's not my mud.
 i don't know. it's not my mud.	well, someone brought it into the house.
-well, someone brought it into the house.	look at the bottom of my shoesthey're clean.
-look at the bottom of my shoesthey're clean.	of course they're clean. you left all the mud on the carpet.
+well, someone brought it into the house.	look at the bottom of my shoesÂ—they're clean.
+look at the bottom of my shoesÂ—they're clean.	of course they're clean. you left all the mud on the carpet.
 of course they're clean. you left all the mud on the carpet.	okay, i'll get the vacuum cleaner.
 okay, i'll get the vacuum cleaner.	don't vacuum it now.
 don't vacuum it now.	don't you want me to clean up the mud?
@@ -2096,11 +2094,11 @@ i love all their songs.	i don't know which one i like the best.
 i don't know which one i like the best.	i like the ones i can sing along with.
 i like the ones i can sing along with.	so do i, like "she loves you."
 so do i, like "she loves you."	"she loves you, yeah, yeah, yeah!..."
-"she loves you, yeah, yeah, yeah!..."	"and you know you should be glad!"
-"and you know you should be glad!"	what a great song.
+"she loves you, yeah, yeah, yeah!..."	"Â…and you know you should be glad!"
+"Â…and you know you should be glad!"	what a great song.
 what a great song.	how about "let it be?"
-how about "let it be?"	oh, yes! "let it be, let it be"
-oh, yes! "let it be, let it be"	"there will be an answer, let it be!"
+how about "let it be?"	oh, yes! "let it be, let it beÂ…"
+oh, yes! "let it be, let it beÂ…"	"Â…there will be an answer, let it be!"
 let's go to a movie.	i'd rather not.
 i'd rather not.	why not?
 why not?	you know i don't like crowds.
@@ -2199,7 +2197,7 @@ she's cute.	okay, so she's not ugly; she's just fat.
 okay, so she's not ugly; she's just fat.	she weighs 98 pounds.
 she weighs 98 pounds.	okay, she's not fat. so what's the problem with her?
 okay, she's not fat. so what's the problem with her?	who said there is a problem with her?
-who said there is a problem with her?	the problem is she has no problemsshe's too good for me!
+who said there is a problem with her?	the problem is she has no problemsÂ—she's too good for me!
 i think you're very pretty.	thank you.
 thank you.	would you have dinner with me?
 would you have dinner with me?	i would like to.
@@ -2327,8 +2325,8 @@ oh. but that can be a curse.	yes, because you can be too sensitive to odors.
 yes, because you can be too sensitive to odors.	i'll say. my girlfriend has a nose like a drug dog.
 i'll say. my girlfriend has a nose like a drug dog.	did she catch you using drugs?
 did she catch you using drugs?	sort of. she knows whenever i sneak a cigarette.
-sort of. she knows whenever i sneak a cigarette.	you don't need a good nose for thatcigarettes stink.
-you don't need a good nose for thatcigarettes stink.	but when i sneak just one cigarette in the morning, she can smell it that evening!
+sort of. she knows whenever i sneak a cigarette.	you don't need a good nose for thatÂ—cigarettes stink.
+you don't need a good nose for thatÂ—cigarettes stink.	but when i sneak just one cigarette in the morning, she can smell it that evening!
 but when i sneak just one cigarette in the morning, she can smell it that evening!	boy, that is a good nose.
 boy, that is a good nose.	i told her she should apply for a job at customs.
 let's go out to eat.	that sounds like fun.
@@ -2998,7 +2996,7 @@ i didn't have to. it's been in business for 60 years.	so what's the problem?
 so what's the problem?	i used all my savings on this one company.
 i used all my savings on this one company.	you put all your eggs into one basket.
 you put all your eggs into one basket.	if the company goes out of business, i'll have nothing.
-if the company goes out of business, i'll have nothing.	oh, you'll have somethingyou'll have a lesson you'll never forget!
+if the company goes out of business, i'll have nothing.	oh, you'll have somethingÂ—you'll have a lesson you'll never forget!
 i was going to be a doctor.	what happened to your plans?
 what happened to your plans?	i got a d in college chemistry.
 i got a d in college chemistry.	well, a d is better than an f.
@@ -3009,7 +3007,7 @@ and now i'm glad that i didn't.	why's that?
 why's that?	a hospital is the most dangerous place in the world.
 a hospital is the most dangerous place in the world.	oh, yes, because of all the killer germs.
 oh, yes, because of all the killer germs.	if you're a smart doctor, you stay away from hospitals.
-if you're a smart doctor, you stay away from hospitals.	yes, the smart doctors are those tv news doctorsno hospitals, no patients.
+if you're a smart doctor, you stay away from hospitals.	yes, the smart doctors are those tv news doctorsÂ—no hospitals, no patients.
 i want to be a mail carrier when i grow up.	why?
 why?	because you get to meet a lot of people.
 because you get to meet a lot of people.	you sure do.
@@ -3020,14 +3018,14 @@ and you get to play with a lot of dogs.	well, you're supposed to be working.
 well, you're supposed to be working.	yes, but i will always pet the friendly dogs.
 yes, but i will always pet the friendly dogs.	what about the unfriendly dogs?
 what about the unfriendly dogs?	i think if you are friendly to dogs, they are friendly to you.
-i think if you are friendly to dogs, they are friendly to you.	dogs are like peoplenot all of them are friendly.
+i think if you are friendly to dogs, they are friendly to you.	dogs are like peopleÂ—not all of them are friendly.
 i want to move to new york.	to the state or the city?
 to the state or the city?	to the city, of course.
 to the city, of course.	why do you want to move there?
 why do you want to move there?	because i want to make a lot of money.
 because i want to make a lot of money.	there are a lot of poor people in new york.
-there are a lot of poor people in new york.	there sure areat least a million.
-there sure areat least a million.	so how do you plan to become rich?
+there are a lot of poor people in new york.	there sure areÂ—at least a million.
+there sure areÂ—at least a million.	so how do you plan to become rich?
 so how do you plan to become rich?	i will knock on the doors of all the corporations.
 i will knock on the doors of all the corporations.	that won't make you rich. nobody will talk to you.
 that won't make you rich. nobody will talk to you.	i will keep knocking on doors.
@@ -3471,7 +3469,7 @@ no. they said there are some things you can't explain.	so are they going to hold
 so are they going to hold another election?	no. that will cost too much money.
 no. that will cost too much money.	so it's better to save money than to have an honest election?
 so it's better to save money than to have an honest election?	well, the democratic party says it was an honest election.
-well, the democratic party says it was an honest election.	of course they say thattheir man won!
+well, the democratic party says it was an honest election.	of course they say thatÂ—their man won!
 i see that former president bush is at a conference.	yes. he's telling jokes about his eight years as president.
 yes. he's telling jokes about his eight years as president.	yes, those eight years were a lot of fun for everyone.
 yes, those eight years were a lot of fun for everyone.	only 4,000 american soldiers were killed overseas.
@@ -3504,7 +3502,7 @@ i like the one where the fireman tells us why we should vote yes.	don't believe 
 don't believe him! whatever the tv ads tell you, the opposite is true.	but the title of measure 1 is "better schools at no cost."
 but the title of measure 1 is "better schools at no cost."	the title should be "better schools at huge cost."
 the title should be "better schools at huge cost."	i can't believe that they would lie to us.
-i can't believe that they would lie to us.	of course they liethat's what politicians do!
+i can't believe that they would lie to us.	of course they lieÂ—that's what politicians do!
 i have a stomachache.	is it something you ate?
 is it something you ate?	maybe. i'm not sure.
 maybe. i'm not sure.	what did you have for breakfast?
@@ -3724,11 +3722,8 @@ that's a good question. maybe it's not old age.	are you right-handed?
 are you right-handed?	yes. all my life.
 yes. all my life.	you're wearing out your right hand. stop using it so much.
 you're wearing out your right hand. stop using it so much.	but i do all my writing with my right hand.
-but i do all my writing with my right hand.	start typing instead. that way your left hand will do half the work.
+'''
 
-"""
-
-split=a.split('\n')
-
-for i in split:
+splits=a.split('\n')
+for i in splits:
     print(i)

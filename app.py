@@ -8,10 +8,12 @@ from flask import Flask, render_template, request
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.trainers import ListTrainer
+from registeration import *
 from train import *
 from train1 import *
 #from d.filterquestions import *
 from getData import *
+from registeration import *
 
 
 
@@ -82,12 +84,41 @@ def blog():
 def contact_us():
     return render_template("contact_us.html")
 
-@app.route("/register")
-def get_data():
-    data=request.data
-    print(data)
-    data=request.form['name']
-    print(data)
+@app.route('/register', methods =['GET', 'POST'])
+def register_data():
+    print("ggggggggggggggggggggghhhhhhhhhhhhhhhhhhh")
+    if request.method == 'POST' and 'name' in request.form and 'email' in request.form and 'password' in request.form:
+        #render_template('login.html')
+        name=request.form['name']
+        email=request.form['email']
+        password=request.form['password']
+        print(email)
+        print(password)
+        print(name)
+        #check_email=getDataOfEmail(email)
+        #if check_email:
+        #    msg="email is aleady register"
+        post_data=postData(name,email,password)
+        print(post_data)
+        if post_data:
+            msg01="Registration Completed"
+            return render_template('register.html')
+        
+
+@app.route('/login', methods =['GET', 'POST'])
+def check_login_details():
+    print("ggggggggggggggggggggghhhhhhhhhhhhhhhhhhh")
+    if request.method == 'POST' and 'email' in request.form and 'password' in request.form:
+        email=request.form['email']
+        password=request.form['password']
+        print(email)
+        print(password)
+        #check_email=getDataOfEmail(email)
+        #if check_email:
+        #    msg="email is aleady register"
+        check_data=check_login(email,password)
+        if check_data:
+            return render_template('index1.html')
 
 @app.route("/get")
 #function for the bot response
