@@ -138,6 +138,8 @@ def get_bot_response():
         userText="gmfc email"
     elif 'gmfc' and 'website' in splitter:
         userText="gmfc website"
+    elif 'attendence' in splitter:
+        userText = "show my attendence"
     
     print(userText)
 

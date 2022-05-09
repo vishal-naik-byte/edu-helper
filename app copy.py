@@ -32,7 +32,7 @@ chatbot1 = ChatBot("Edu-helper Chatbot", storage_adapter="chatterbot.storage.SQL
 trainer = ChatterBotCorpusTrainer(chatbot1)
 #trainer.train("chatterbot.corpus.english") #train the chatter bot for english
 trainer1 = ListTrainer(chatbot1)
-trainer1.train(chatbot1_data)
+trainer1.train(data1)
 #trainer1.train(data1)
 #trainer1.train(attendenceConvo)
 #trainer1.train(unrelateddata)
@@ -105,6 +105,9 @@ def register_data():
             msg01="Registration Completed"
             return render_template('register.html')
         
+@app.route("/index3")
+def index2():
+    return render_template("index3.html")
 
 @app.route('/login', methods =['GET', 'POST'])
 def check_login_details():
@@ -120,6 +123,8 @@ def check_login_details():
         check_data=check_login(email,password)
         if check_data:
             return render_template('index1.html')
+
+
 
 @app.route("/get")
 #function for the bot response

@@ -14,7 +14,7 @@ data1=[
     "You are welcome.",
     "what is your name",
     "my name is chatbot",
-    "Help me!","help",
+    "help",
     "Ok, here is a link: http://edu-helper.com",
     "courses",
     "Available courses",
