@@ -31,13 +31,20 @@ chatbot = ChatBot("Edu-helper Chatbot", storage_adapter="chatterbot.storage.SQLS
         }],preprocessors=['chatterbot.preprocessors.clean_whitespace'])
 trainer = ChatterBotCorpusTrainer(chatbot)
 #trainer.train("chatterbot.corpus.english") #train the chatter bot for english
+
 trainer1 = ListTrainer(chatbot)
 trainer1.train(data)
 trainer1.train(data1)
 trainer1.train(attendenceConvo)
 trainer1.train(unrelateddata)
+#trainer1.train(data_of_human)
 
-combined_data=data+data1+attendenceConvo+unrelateddata
+
+
+combined_data=data+data1+attendenceConvo+unrelateddata+data_of_human
+
+limit=True
+
 log_of_chat=['this','is','logs']
 #define app routes
 @app.route("/")
@@ -124,31 +131,77 @@ def check_login_details():
 #function for the bot response
 def get_bot_response():
     userText = request.args.get('msg')
-    log_of_chat.append(userText)
-    print(str(log_of_chat))
-    if userText == " ":
-        return str("Please dont send blank messages")
+    userText = userText.replace("?","")
+    striper=userText.strip()
+    splitter=striper.split(" ")
+    if 'gmfc' and 'email' in splitter:
+        userText="gmfc email"
+    elif 'gmfc' and 'website' in splitter:
+        userText="gmfc website"
+    
+    print(userText)
 
-    if userText[:8] == "rollno::" and (log_of_chat[-2] == 'ok what is your Roll No:? Format:rollno::xxxx' or log_of_chat[-2] == 'ok what is your Roll No:?Format:rollno::xxxx'):
-        RollNo=userText[8:]
-        attendence=get_Attendence(RollNo)
-        return str(attendence)
-    elif userText[:8] == "rollno::" and (log_of_chat[-2] != 'ok what is your Roll No: ? Format:rollno::xxxx' or log_of_chat[-2] != 'ok what is your Roll No:? Format:rollno::xxxx'):
-        return str("Please first ask me to show your attendence")
+    if limit==True:
+        log_of_chat.append(userText)
+        print(str(log_of_chat))
+        if userText == " ":
+            return str("Please dont send blank messages")
+        
+        if userText[:11] == "complaint::":
+            complaint_message=userText[11:]
+            file1=open("complaint.txt","a")
+            file1.write(complaint_message+"\n")
+            file1.close()
+            return str("Thank you your complaint is registered")
 
-    if userText not in combined_data:
-        if userText.capitalize() not in combined_data:
-        #return str("If you giving new input than its good but first get the permission to add your new input")
-            return str("srry i din't understand")
+        if userText[:8] == "rollno::" and (log_of_chat[-2] == 'ok what is your Roll No:? Format:rollno::xxxx' or log_of_chat[-2] == 'ok what is your Roll No:?Format:rollno::xxxx'):
+            RollNo=userText[8:]
+            attendence=get_Attendence(RollNo)
+            return str(attendence)
+        elif userText[:8] == "rollno::" and (log_of_chat[-2] != 'ok what is your Roll No: ? Format:rollno::xxxx' or log_of_chat[-2] != 'ok what is your Roll No:? Format:rollno::xxxx'):
+            return str("Please first ask me to show your attendence")
+
+        if userText not in combined_data:
+            if userText.capitalize() not in combined_data:
+                #return str("If you giving new input than its good but first get the permission to add your new input")
+                user_message=userText
+                file2=open("user_did_not_get_answer.txt","a")
+                file2.write(user_message+"\n")
+                file2.close()
+                return str("This type of input is not present in our database so i din't understand it")
 
 
 #    elif userText not in filter:
 #        return str("Sorry not in database!")
-    bot_response=chatbot.get_response(userText)
-    if bot_response in not_to_reply:
-        return str("If this input is correct than Sorry i am still learning")
-    log_of_chat.append(str(bot_response))
-    return str(bot_response)
+        bot_response=chatbot.get_response(userText)
+
+        if bot_response in not_to_reply:
+            return str("If this input is correct than Sorry i am still learning")
+        log_of_chat.append(str(bot_response))
+        return str(bot_response)
+    else:
+        log_of_chat.append(userText)
+        print(str(log_of_chat))
+        if userText == " ":
+            return str("Please dont send blank messages")
+
+        if userText[:8] == "rollno::" and (log_of_chat[-2] == 'ok what is your Roll No:? Format:rollno::xxxx' or log_of_chat[-2] == 'ok what is your Roll No:?Format:rollno::xxxx'):
+            RollNo=userText[8:]
+            attendence=get_Attendence(RollNo)
+            return str(attendence)
+        elif userText[:8] == "rollno::" and (log_of_chat[-2] != 'ok what is your Roll No: ? Format:rollno::xxxx' or log_of_chat[-2] != 'ok what is your Roll No:? Format:rollno::xxxx'):
+            return str("Please first ask me to show your attendence")
+
+
+#    elif userText not in filter:
+#        return str("Sorry not in database!")
+        bot_response=chatbot.get_response(userText)
+        if bot_response in not_to_reply:
+            return str("If this input is correct than Sorry i am still learning")
+        log_of_chat.append(str(bot_response))
+        return str(bot_response)
+
+
 
 if __name__ == "__main__":
     app.run()

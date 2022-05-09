@@ -1,21 +1,29 @@
 data=["what is computer","computer is a device which is used to get input from users and process that data and give output of that"]
 
 data1=[
-    "hey",
     "hi",
-    "How are you?",
+    "hey,How may i help you?",
+    "hi",
     "how are you",
     "I am good what about you?",
-    "good",
-    "That is good to hear.",
+    "good","fine",
+    "Thats is good to hear! how may i help you",
     "ok",
     "ok",
     "Thank you",
     "You are welcome.",
     "what is your name",
     "my name is chatbot",
-    "Help me!",
-    "Ok, here is a link: http://edu-helper.com"
+    "Help me!","help",
+    "Ok, here is a link: http://edu-helper.com",
+    "courses",
+    "Available courses",
+    "results",
+    "link open",
+    "gmfc email",
+    "gmfcgoa2013@gmail.com",
+    "gmfc website",
+    "gmfc.ac.in"
 ]
 
 attendenceConvo=[
@@ -26,7 +34,7 @@ attendenceConvo=[
 not_to_reply=[
     "what is computer",
     "what is your name",
-    "Help me!",
+    "Help me!","Help",
     "Show my attendence",
     "what is your name ?"
 ]
