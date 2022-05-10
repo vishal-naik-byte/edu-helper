@@ -11,7 +11,6 @@ from chatterbot.trainers import ListTrainer
 from registeration import *
 from train import *
 from train1 import *
-#from d.filterquestions import *
 from getData import *
 from registeration import *
 
@@ -23,11 +22,10 @@ File_Handler=FileHandler('errorlog.txt')
 File_Handler.setLevel(WARNING)
 #create chatbot
 print("chatbot Starting...")
-#read_only=True is a chatbot parameter for only read i removed that this is my note
-chatbot = ChatBot("Edu-helper Chatbot", storage_adapter="chatterbot.storage.SQLStorageAdapter",logic_adapter=["chatterbot.logic.BestMatch",'chatterbot.logic.MathematicalEvaluation','chatterbot.logic.TimeLogicAdapter',{
-            'import_path': 'chatterbot.logic.SpecificResponseAdapter',
-            'input_text': 'Help me!',
-            'output_text': 'Ok, here is a link: http://chatterbot.rtfd.org'
+#read_only=True is a chatbot parameter for only read i have removed that this is my note
+chatbot = ChatBot("Edu-helper Chatbot", storage_adapter="chatterbot.storage.SQLStorageAdapter",
+            logic_adapter=["chatterbot.logic.BestMatch",'chatterbot.logic.MathematicalEvaluation',
+            'chatterbot.logic.TimeLogicAdapter',{
         }],preprocessors=['chatterbot.preprocessors.clean_whitespace'])
 trainer = ChatterBotCorpusTrainer(chatbot)
 #trainer.train("chatterbot.corpus.english") #train the chatter bot for english
@@ -37,7 +35,7 @@ trainer1.train(data)
 trainer1.train(data1)
 trainer1.train(attendenceConvo)
 trainer1.train(unrelateddata)
-#trainer1.train(data_of_human)
+trainer1.train(data_of_human)
 
 
 
@@ -93,18 +91,13 @@ def contact_us():
 
 @app.route('/register', methods =['GET', 'POST'])
 def register_data():
-    print("ggggggggggggggggggggghhhhhhhhhhhhhhhhhhh")
     if request.method == 'POST' and 'name' in request.form and 'email' in request.form and 'password' in request.form:
-        #render_template('login.html')
         name=request.form['name']
         email=request.form['email']
         password=request.form['password']
         print(email)
         print(password)
         print(name)
-        #check_email=getDataOfEmail(email)
-        #if check_email:
-        #    msg="email is aleady register"
         post_data=postData(name,email,password)
         print(post_data)
         if post_data:
@@ -114,15 +107,11 @@ def register_data():
 
 @app.route('/login', methods =['GET', 'POST'])
 def check_login_details():
-    print("ggggggggggggggggggggghhhhhhhhhhhhhhhhhhh")
     if request.method == 'POST' and 'email' in request.form and 'password' in request.form:
         email=request.form['email']
         password=request.form['password']
         print(email)
         print(password)
-        #check_email=getDataOfEmail(email)
-        #if check_email:
-        #    msg="email is aleady register"
         check_data=check_login(email,password)
         if check_data:
             return render_template('index1.html')
@@ -173,8 +162,6 @@ def get_bot_response():
                 return str("This type of input is not present in our database so i din't understand it")
 
 
-#    elif userText not in filter:
-#        return str("Sorry not in database!")
         bot_response=chatbot.get_response(userText)
 
         if bot_response in not_to_reply:
@@ -195,8 +182,6 @@ def get_bot_response():
             return str("Please first ask me to show your attendence")
 
 
-#    elif userText not in filter:
-#        return str("Sorry not in database!")
         bot_response=chatbot.get_response(userText)
         if bot_response in not_to_reply:
             return str("If this input is correct than Sorry i am still learning")
