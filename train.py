@@ -13,13 +13,13 @@ data1=[
     "Thank you",
     "You are welcome.",
     "what is your name",
-    "my name is chatbot",
+    "my name is Edu-Helper Bot",
     "help",
     "Ok, here is a link: http://edu-helper.com",
     "courses",
     "Available courses",
-    "results",
-    "link open",
+    "result",
+    """ok what is your Roll No?Format=result:rollno:xxxx""",
     "gmfc email",
     "gmfcgoa2013@gmail.com",
     "gmfc website",
@@ -28,7 +28,24 @@ data1=[
 
 attendenceConvo=[
     "Show my attendence",
-    "ok what is your Roll No:?Format:rollno::xxxx"
+    "ok what is your Roll No:?Format=att:rollno::xxxx"
+]
+
+resultConvo=[
+    "Show my result",
+    """ok what is your Roll No?Format=result:rollno:xxxx"""
+]
+
+noticeConvo=[
+    "notice",
+    """<b >1]Visit This Link For Public Notice👉 <a href=" http://www.gmfc.ac.in/public-notice-board/ ">Click Here</a> </b></br>
+    <b >2]Visit This Link For Students Notice👉 <a href=" http://www.gmfc.ac.in/student-notice-board/ ">Click Here</a> </b>"""
+]
+
+ExamTimetable=[
+    "examination timetable",
+    """<b >1]Visit This Link For Bca Examination Timetable👉 <a href=" https://www.gmfc.ac.in/wp-content/uploads/2022/05/Adobe-Scan-07-May-2022.pdf ">Click Here</a> </b></br>
+    <b >2]Visit This Link For Bcom Examination Timetable👉 <a href=" https://www.gmfc.ac.in/wp-content/uploads/2022/05/BCOM-TT.pdf ">Click Here</a> </b>"""
 ]
 
 not_to_reply=[

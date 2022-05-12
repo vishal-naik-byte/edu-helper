@@ -120,7 +120,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6 offset-sm-3">
-            <div id="chatbox" class="border border-success" style="background-color:antiquewhite">
+            <div id="chatbox" class="border border-success" style="background-image:url('/static/assets/images/background.jpeg');background-repeat: no-repeat;background-size: cover;">
                 <p class="botText"><span>Hi! I'm Edu-Helper Chatbot</span></p>
             </div>
             <div id="userInput">
@@ -139,12 +139,12 @@
 <script>
     function getResponse() {
         let userText = $("#textInput").val();
-        let userHtml = '<div style="font-size:20px;" class="d-flex flex-row justify-content-end mb-4 pt-1"><div><p class="small p-2 me-3 mb-3 text-white rounded-3 bg-warning">'+userText+'</p></div><img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp" alt="avatar 1" style="width: 45px; height: 100%;"></div>';
+        let userHtml = '<div style="font-size:20px;" class="d-flex flex-row justify-content-end mb-4 pt-1"><div><p class="small p-2 me-3 mb-3 text-white rounded-3 btn btn-sm btn-success">'+userText+'</p></div><img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp" alt="avatar 1" style="width: 45px; height: 100%;"></div>';
         $("#textInput").val("");
         $("#chatbox").append(userHtml);
         document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
         $.get("/get", { msg: userText}).done(function(data) {
-        var botHtml = '<div style="font-size:20px;" class="d-flex flex-row justify-content-start"><img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp" alt="avatar 1" style="width: 45px; height: 100%;"><div><p class="small p-2 ms-3 mb-3 rounded-3" style="background-color: #f5f6f7;">'+data+'</p></div></div>';
+        var botHtml = '<div style="font-size:20px;border-radius:20px 20px 20px 20px;" class="d-flex flex-row justify-content-start"><img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp" alt="avatar 1" style="width: 45px; height: 100%;"><div><p class="small p-2 ms-3 mb-3 rounded-3" style="background-color: #f5f6f7;">'+data+'</p></div></div>';
         $("#chatbox").append(botHtml);
         document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
 });

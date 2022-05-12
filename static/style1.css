@@ -21,10 +21,10 @@
     font-size: 17px;
     text-align: left;
     line-height: 30px;
-    border-radius: 50%;
+    border-radius: 25px 25px 25px 25px;
 }
 .botText span {
-    background-color: #EF5350;
+    background-color: #07ac22;
     padding: 10px;
     border-radius: 2px;
 }

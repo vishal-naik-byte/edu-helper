@@ -14,7 +14,7 @@
 			<div class="row justify-content-md-center h-100">
 				<div class="card-wrapper">
 					<div class="brand">
-						<img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="bootstrap 4 login page">
+						<img src="{{ url_for('static', filename='assets/image/logo.jpg') }}" alt="bootstrap 4 login page">
 					</div>
 					<div class="card fat">
 						<div class="card-body">
@@ -72,25 +72,6 @@
 			</div>
 		</div>
 	</section>
-	<script>
-		function getResponse() {
-			let userText = $("#name").val();
-			let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
-			$("#name").val("");
-			$.get("/register_data", { msg: name}).done(function(data) {
-			var data = data;
-	});
-	}
-		$("#register").keypress(function(e) {
-		//if enter key is pressed
-			if(e.which == 13) {
-				getResponse();
-			}
-		});
-		$("#register").click(function() {
-			getResponse();
-		});
-		</script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
